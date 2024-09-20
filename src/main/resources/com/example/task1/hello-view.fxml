@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<VBox xmlns:fx="http://javafx.com/fxml" spacing="10" alignment="center" fx:controller="com.example.task1.HelloController">
+    <ColorPicker fx:id="colorPicker" />
+    <ColorPicker fx:id="colorPickerBorder" />
+    <HBox>
+        <Text text="Ширина: "/>
+        <TextField fx:id="widthField" promptText="Ширина" />
+    </HBox>
+    <HBox>
+        <Text text="Высота: "/>
+        <TextField fx:id="heightField" promptText="Высота" />
+    </HBox>
+    <HBox>
+        <Text text="Рамка: "/>
+        <TextField fx:id="borderField" promptText="Рамка" />
+    </HBox>
+    <HBox>
+        <Text text="X координата: "/>
+        <TextField fx:id="xField" promptText="X координата" />
+    </HBox>
+    <HBox>
+        <Text text="Y координата: "/>
+        <TextField fx:id="yField" promptText="Y координата" />
+    </HBox>
+
+    <Button fx:id="drawButton" text="Нарисовать прямоугольник" onAction="#onClick" />
+    <Canvas fx:id="canvas" width="400" height="400" />
+<!--    <Canvas fx:id="canvas" width="400" height="400" styleClass="canvas-border" />-->
+</VBox>
