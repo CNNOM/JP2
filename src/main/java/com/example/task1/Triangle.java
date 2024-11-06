@@ -30,7 +30,6 @@ class Triangle extends Shape {
 
     @Override
     double area() {
-        // Используем формулу Герона для вычисления площади треугольника
         double s = (sideA + sideB + sideC) / 2;
         return Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
     }

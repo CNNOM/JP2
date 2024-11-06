@@ -25,7 +25,6 @@ class Cross extends Shape {
 
     @Override
     double area() {
-        // Площадь крестика можно считать как площадь двух прямоугольников
         return 2 * size * size;
     }
 
