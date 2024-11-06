@@ -44,22 +44,77 @@ public class HelloController {
     }
 
     @FXML
-    private void onClick(ActionEvent event) {
+    private void onClickRectangle(ActionEvent event) {
+        drawRectangle();
+    }
+
+    @FXML
+    private void onClickCircle(ActionEvent event) {
+        drawCircle();
+    }
+
+    @FXML
+    private void onClickTriangle(ActionEvent event) {
+        drawTriangle();
+    }
+
+    @FXML
+    private void onClickCross(ActionEvent event) {
+        drawCross();
+    }
+
+    private void drawRectangle() {
         double width = Double.parseDouble(widthField.getText());
         double height = Double.parseDouble(heightField.getText());
         double border = Double.parseDouble(borderField.getText());
         double x = Double.parseDouble(xField.getText());
         double y = Double.parseDouble(yField.getText());
 
-
-        System.out.println(width +" "+ height);
-
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight()); // Очистка всего холста
 
         Rectangle rectangle = new Rectangle(colorPicker.getValue(), colorPickerBorder.getValue(), width, height, border, x, y);
-//        rectangle.setPosition(x, y);
         rectangle.draw(graphicsContext);
-        System.out.println(rectangle.toString());
+    }
+
+    private void drawCircle() {
+        double radius = Double.parseDouble(widthField.getText());
+        double border = Double.parseDouble(borderField.getText());
+        double x = Double.parseDouble(xField.getText());
+        double y = Double.parseDouble(yField.getText());
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight()); // Очистка всего холста
+
+        Circle circle = new Circle(colorPicker.getValue(), colorPickerBorder.getValue(), radius, border, x, y);
+        circle.draw(graphicsContext);
+    }
+
+    private void drawTriangle() {
+        double width = Double.parseDouble(widthField.getText());
+        double height = Double.parseDouble(heightField.getText());
+        double border = Double.parseDouble(borderField.getText());
+        double x = Double.parseDouble(xField.getText());
+        double y = Double.parseDouble(yField.getText());
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight()); // Очистка всего холста
+
+        Triangle triangle = new Triangle(colorPicker.getValue(), colorPickerBorder.getValue(), width, height, border, x, y);
+        triangle.draw(graphicsContext);
+    }
+
+    private void drawCross() {
+        double width = Double.parseDouble(widthField.getText());
+        double height = Double.parseDouble(heightField.getText());
+        double border = Double.parseDouble(borderField.getText());
+        double x = Double.parseDouble(xField.getText());
+        double y = Double.parseDouble(yField.getText());
+
+        GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
+        graphicsContext.clearRect(0, 0, canvas.getWidth(), canvas.getHeight()); // Очистка всего холста
+
+        Cross cross = new Cross(colorPicker.getValue(), colorPickerBorder.getValue(), width, height, border, x, y);
+        cross.draw(graphicsContext);
     }
 }

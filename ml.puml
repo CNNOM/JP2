@@ -1,0 +1,59 @@
+@startuml
+class com.example.task1.Circle {
+- double radius
+- Color colorBorder
+- double borderWidth
+~ double area()
+~ void draw(GraphicsContext)
++ String toString()
+}
+
+
+class com.example.task1.Cross {
+- double size
+- Color colorBorder
+- double borderWidth
+~ double area()
+~ void draw(GraphicsContext)
++ String toString()
+}
+
+
+abstract class com.example.task1.Shape {
+# Color color
+# double x
+~ {abstract}double area()
+~ {abstract}void draw(GraphicsContext)
++ void setColor(Color)
+}
+
+class com.example.task1.Rectangle {
+- double length
+- double width
+- Color colorBorder
+- double borderWidth
+~ double area()
+~ void draw(GraphicsContext)
++ String toString()
+}
+
+
+class com.example.task1.Triangle {
+- double sideA
+- double sideB
+- double sideC
+- Color colorBorder
+- double borderWidth
+~ double area()
+~ void draw(GraphicsContext)
++ String toString()
+}
+
+
+
+
+com.example.task1.Shape <|-- com.example.task1.Circle
+com.example.task1.Shape <|-- com.example.task1.Cross
+com.example.task1.Shape <|-- com.example.task1.Rectangle
+com.example.task1.Shape <|-- com.example.task1.Triangle
+@enduml
